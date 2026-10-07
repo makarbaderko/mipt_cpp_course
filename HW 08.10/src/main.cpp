@@ -7,6 +7,15 @@ int main() {
     return "Simulating the processing...\n Processed: " + data;
   };
 
+  AccessStrategy admin_only = [](const std::string& user) {
+    return user == "admin";
+  };
+
+  sample_service = WithAuth(sample_service, admin_only);
+
   std::cout << "Admin tries to access the service\n";
   std::cout << sample_service("admin", "save report") << '\n';
+
+  std::cout << "Non-admin tries to access the service\n";
+  std::cout << sample_service("guest", "save report") << '\n';
 }
