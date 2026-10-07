@@ -3,6 +3,7 @@ project(hw VERSION 1.0.0 LANGUAGES CXX)
 
 add_executable(hw
   src/main.cpp
+  src/service.cpp
 )
 
 target_compile_features(hw PRIVATE cxx_std_23)
