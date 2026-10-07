@@ -4,7 +4,7 @@
 
 int main() {
   Service sample_service = [](const std::string&, const std::string& data) {
-    return "Simulating the processing...\n Processed: " + data;
+    return "Simulating the processing...\nProcessed: " + data;
   };
 
   AccessStrategy admin_only = [](const std::string& user) {
